@@ -1,19 +1,33 @@
 {
-  "name": "brc-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "name": "bhrp-bot",
+  "version": "2.0.0",
+  "description": "BHRP Bot",
+  "main": "index.js",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/builders": "^1.6.1",
+    "@discordjs/rest": "^1.7.0",
+    "@types/node": "^18.0.6",
+    "discord-api-types": "^0.37.39",
     "discord-rpc": "^4.0.1",
     "discord.js": "^14.9.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.3.0",
+    "mongoose": "^7.0.4",
+    "node-fetch": "^3.2.6"
   },
-  "devDependencies": {
-    "eslint": "^8.38.0"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iLikeToCode/bhrp-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iLikeToCode/bhrp-bot/issues"
+  },
+  "homepage": "https://github.com/iLikeToCode/bhrp-bot#readme"
 }
