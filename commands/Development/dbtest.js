@@ -3,21 +3,35 @@ const rolePermissions = require('../../Schemas.js/roles');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('dbtest')
-    .setDescription('Test Database')
-    .addRoleOption(option => option.setName('role') .setDescription('Role to save')),
+    .setName('roles')
+    .setDescription('Save roles')
+    .addRoleOption(option => option.setName('role') .setDescription('Role to save.'))
+    .addBooleanOption(option => option.setName('override') .setDescription('Override the current database save.')),
 
 
   async execute(interaction) {
-    let roleProfile = await rolePermissions.findOne({ GuildID: interaction.guild.id, RoleID: interaction.options.getRole('role')};
-    if (!roleProfile) roleProfile = new rolePermissions({
-      _id: mongoose.Types.ObjectId(),
-      guildID: interaction.guild.id,
-      roleID: interaction.options.getRole('role'),
-    }),
+    rolePermissions.findOne({ GuildID: interaction.guild.id}, async (err, data) => {
+      if (err) throw err;
 
-        
+      if(!data) {
+        rolePermissions.create({
+          GuildID: interaction.guild.id,
+          RoleID: interaction.options.getRole('role')
+        })
+        interaction.reply({content: `Role for this guild was set to <@&${data.RoleID}>`})
+      } else if (data) {
+          if (interaction.options.getBoolean('override') === true) {
+            rolePermissions.deleteOne({GuildID: interaction.guild.id})
+            rolePermissions.create({
+              GuildID: interaction.guild.id,
+              RoleID: interaction.options.getRole('role')
+            })
+          }
+          else {
+            interaction.reply({content: `Role for this guild has already been set to <@&${data.RoleID}>`})
+          }
+      }
     })
-  }
-  
+        
+    }
 }

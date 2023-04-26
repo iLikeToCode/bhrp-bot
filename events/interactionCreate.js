@@ -1,7 +1,11 @@
+const { buttonHandler } = require('./buttonHandler.js')
+
+
+
 module.exports = {
     name: 'interactionCreate',
     async execute(interaction, client) {
-        if (interaction.isButton()) return await Buttons(interaction, client);
+        if (interaction.isButton()) return buttonHandler(interaction, client);
         if (!interaction.isCommand()) return;
 
         const command = client.commands.get(interaction.commandName);
@@ -24,24 +28,6 @@ module.exports = {
         }
 
         
-        async function Buttons(interaction, client) {
-
-            console.log(`${interaction.user.tag} (${interaction.user.id}) > [${interaction.customId}]`);
-
-            if (interaction.isButton()) {
-                const btn_id = interaction.customId;
-                if (btn_id == "test") {
-                    interaction.reply({content: 'Test', ephemeral: true})
-                } else if (btn_id == 'reload') {
-                    interaction.reply({content: `Reloading Commands Now`, ephemeral: true})
-                    require('../../functions/handelCommands')(client);
-                    interaction.editReply({content: `Reloaded commands!` });
-                }
-            }
-        }
 
     },
-    
-
-
 };

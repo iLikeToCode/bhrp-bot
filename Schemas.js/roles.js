@@ -6,4 +6,4 @@ let rolePermissions = new Schema({
 })
 
 
-module.exports = model('rolePermissions', rolePermissions, "rolePermissions")
+module.exports = model('rolePermissions', rolePermissions)

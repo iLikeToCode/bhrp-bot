@@ -21,12 +21,10 @@ module.exports = {
 			.addComponents(reload)
 			.addComponents(test)
         
-        const row2 = new ActionRowBuilder()
-            .addComponents(test)
 
 		await interaction.reply({
 			content: `Choose an action. This is in beta.`,
-			components: [row, row2],
+			components: [row],
 		});
 	},
 };
