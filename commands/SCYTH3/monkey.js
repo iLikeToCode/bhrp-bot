@@ -11,7 +11,7 @@ module.exports = {
         const failEmbed = new EmbedBuilder()
             .setTitle('You do not have the required permissions to run /monkey')
             .addFields(
-                { name: ' ', value: '**Permissions Required:** DM <@!751230703936733235> for access.'}
+                { name: ' ', value: '**Permissions Required:** DM <@!751230703936733235> or <@!844951775106433024> for access.'}
             )
         const monke = new EmbedBuilder()
             .addFields(
