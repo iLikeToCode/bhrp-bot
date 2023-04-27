@@ -2,23 +2,17 @@ const { ActionRowBuilder, ButtonBuilder, ButtonStyle, SlashCommandBuilder } = re
 
 module.exports = {
 	data: new SlashCommandBuilder()
-    .setName('panel')
-    .setDescription('Dev Panel for Bot'),
+    .setName('btntest')
+    .setDescription('Testing Buttons'),
 	async execute(interaction) {
-		if (!interaction.user.id) return console.log("${interaction.user} attempted to use /panel")
 
-		const reload = new ButtonBuilder()
-			.setCustomId('reload')
-			.setLabel('Reload Commands')
-			.setStyle(ButtonStyle.Primary);
 
 		const test = new ButtonBuilder()
-			.setCustomId('test')
-			.setLabel('Test')
-			.setStyle(ButtonStyle.Success);
+			.setCustomId('cclicker')
+			.setLabel('Cookie Clicker')
+			.setStyle(ButtonStyle.Primary);
 
 		const row = new ActionRowBuilder()
-			.addComponents(reload)
 			.addComponents(test)
         
 
@@ -28,4 +22,3 @@ module.exports = {
 		});
 	},
 };
-
