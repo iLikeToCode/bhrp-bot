@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+</head>
+<body>
+
+{{!-- Navigation links --}}
+    <nav>
+        <h4>Send a message using bot</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/say">Say</a></li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card" style="width: 18rem;">            
+            <div class="card-header">Say Command</div>    
+            <div class="card-body">
+                <form action="/say" method="POST">
+                    <div class="mb-3">
+                        <label for="message-form" class="form-label">Message</label>
+                        <input type="text" class="form-control" id="message-form" name="message" width=20 height=20>                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="channel-form" class="form-label">Channel</label>
+                        <input type="text" class="form-control" id="channel-form" name="channel">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Body of each page will go here --}}
+</body>
+</html>
