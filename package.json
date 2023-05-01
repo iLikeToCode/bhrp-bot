@@ -1,10 +1,8 @@
 {
   "name": "bhrp-bot",
-  "version": "2.0.0",
-  "description": "BHRP Bot",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -14,25 +12,16 @@
     "@discordjs/builders": "^1.6.1",
     "@discordjs/rest": "^1.7.0",
     "@types/node": "^18.0.6",
-    "chalk": "^5.2.0",
-    "discord-api-types": "^0.37.39",
-    "discord-rpc": "^4.0.1",
+    "discord-api-types": "^0.37.40",
     "discord.js": "^14.9.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
     "fs": "^0.0.1-security",
     "hbs": "^4.2.0",
-    "mongodb": "^5.3.0",
     "mongoose": "^6.0.12",
     "node-fetch": "^3.2.6",
     "nodemon": "^2.0.22"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iLikeToCode/bhrp-bot.git"
-  },
-  "bugs": {
-    "url": "https://github.com/iLikeToCode/bhrp-bot/issues"
-  },
-  "homepage": "https://github.com/iLikeToCode/bhrp-bot#readme"
+  "description": ""
 }
